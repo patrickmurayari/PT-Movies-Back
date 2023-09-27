@@ -4,7 +4,7 @@ const  server = require('./src/app.js'); // Asegúrate de que la ruta sea correc
 
 
 const corsOptions = {
-    origin: 'http://127.0.0.1:5173',
+    origin: 'https://pt-movies-front.vercel.app/',
 };
 
 server.use(cors(corsOptions));
