@@ -88,7 +88,7 @@ export const getAllMovies = async (req, res) => {
 
 
 
-// export default getAllMovies;
+export default getAllMovies;
 // module.exports = {
 //     getAllMovies
 // }
