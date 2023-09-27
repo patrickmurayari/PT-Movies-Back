@@ -11,10 +11,16 @@ server.use(cors(corsOptions));
 
 const PORT = 3001;
 
-server.listen(PORT, () => {
-    conn.sync({ force: false });
-    console.log(`Escuchando en el puerto http://localhost:${PORT}`);
-});
+conn.sync({force:false}).then(()=> {
+    server.listen(PORT, ()=> {
+        console.log(`Escuchando en el puerto http://localhost:${PORT}`);
+    })
+})
+
+// server.listen(PORT, () => {
+//     conn.sync({ force: false });
+//     console.log(`Escuchando en el puerto http://localhost:${PORT}`);
+// });
 
 
 

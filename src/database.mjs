@@ -1,8 +1,8 @@
-import { config as dotenvConfig } from 'dotenv';
+import dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
 import MoviesModel from './models/MoviesModel.mjs';
 
-dotenvConfig(); // Carga las variables de entorno desde el archivo .env
+dotenv.config(); // Carga las variables de entorno desde el archivo .env
 
 const {
     DB_USER,
