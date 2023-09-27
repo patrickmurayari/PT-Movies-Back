@@ -5,10 +5,11 @@
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.mjs"
   },
+  "type":"module",
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/patrickmurayari/PT-Movies-Back.git"
   },
   "keywords": [],
