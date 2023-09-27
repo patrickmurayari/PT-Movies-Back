@@ -43,10 +43,14 @@ const getApi = async (req, res) => {
         })
 
         for (const movieData of apiInfo) {
-            const existingMovie = await Movie.findOne({ where: { id: movieData.id } });
-            if (!existingMovie) {
-                // Si no existe, crea un nuevo registro en la base de datos
-                await Movie.create(movieData);
+            try {
+                const existingMovie = await Movie.findOne({ where: { id: movieData.id } });
+                if (!existingMovie) {
+                    // Si no existe, crea un nuevo registro en la base de datos
+                    await Movie.create(movieData);
+                }
+            } catch (dbError) {
+                console.error('Error al interactuar con la base de datos:', dbError.message);
             }
         }
 
@@ -54,7 +58,8 @@ const getApi = async (req, res) => {
 
         return apiInfo
     } catch (error) {
-        console.error(error);
+        console.error('Error en la solicitud a la API:', error.message);
+        throw error;
     }
 }
 
@@ -73,8 +78,8 @@ const getAllMovies = async (req, res) => {
             res.status(200).json(moviesTotal)
         }
     } catch (error) {
-        console.log(error);
-        // res.status(404).json({error: message.error})
+        console.error('Error en la ruta getAllMovies:', error.message);
+        res.status(500).json({ error: 'Error interno del servidor' });
     }
 }
 

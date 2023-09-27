@@ -6,7 +6,7 @@ const getYearFilter = async (req, res) => {
     try {
         let { rango1, rango2 } = req.body
 
-        if (isNaN(rango1) || isNaN(rango2) || rango1 > rango2) {
+        if (!Number.isInteger(rango1) || !Number.isInteger(rango2) || rango1 < 0 || rango2 < 0 || rango1 > rango2) {
             return res.status(400).json({ error: 'Valores de rango incorrectos' });
         }
 
