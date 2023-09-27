@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.mjs"
   },
-  "type":"module",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/patrickmurayari/PT-Movies-Back.git"
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/patrickmurayari/PT-Movies-Back#readme",
   "dependencies": {
+    "@types/sequelize": "^4.28.16",
     "axios": "^1.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
