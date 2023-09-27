@@ -1,8 +1,13 @@
-const { Sequelize } = require('sequelize')
-const { Movie } = require('../db')
+// const { Sequelize } = require('sequelize')
+// const { Movie } = require('../database.mjs')
+
+import { Sequelize } from "sequelize"
+import  { Movie } from "../database.mjs"
 const { Op } = Sequelize
 
-const getYearFilter = async (req, res) => {
+
+
+export const getYearFilter = async (req, res) => {
     try {
         let { rango1, rango2 } = req.body
 
@@ -30,6 +35,7 @@ const getYearFilter = async (req, res) => {
     }
 }
 
-module.exports = {
-    getYearFilter
-}
+// export default getYearFilter;
+// module.exports = {
+//     getYearFilter
+// }
