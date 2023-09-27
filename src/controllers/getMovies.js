@@ -8,16 +8,17 @@ let dataDownloaded = false;
 
 const options = {
     method: 'GET',
-    url: 'https://moviesdatabase.p.rapidapi.com/titles',
+    url: 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
     headers: {
         'X-RapidAPI-Key': '87a6ad1794msh2c041b5af7cbf5ap1e57b2jsnbf637121ddf2',
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
     }
 };
 
+
 const options2 = {
     method: 'GET',
-    url: 'https://moviesdatabase.p.rapidapi.com/titles?page=2',
+    url: 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming?page=2',
     headers: {
         'X-RapidAPI-Key': '5c9b5eb2a1msh0f5f4b68f3b31e1p179775jsnd4def2108063',
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
@@ -37,7 +38,7 @@ const getApi = async (req, res) => {
 
         const apiInfo = await responseTotal.map((mv) => {
             return {
-                id :mv._id,
+                id: mv._id,
                 image: mv.primaryImage?.url,
                 title: mv.primaryImage?.caption.plainText,
                 release_year: mv.releaseYear.year,
