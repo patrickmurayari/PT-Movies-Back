@@ -1,15 +1,15 @@
-import express from 'express';
+const express = require ('express');
 const MoviesRouter = express.Router();
 
-import { getAllMovies } from '../controllers/getMovies.mjs';
-import { getYearFilter } from '../controllers/getFilterYear.mjs';
-import { getOrderMovies } from '../controllers/getMoviesOrder.mjs';
+const { getAllMovies } = require( '../controllers/getMovies.js');
+const  { getYearFilter } = require( '../controllers/getFilterYear.js');
+const  { getOrderMovies } = require( '../controllers/getMoviesOrder.js');
 
 MoviesRouter.get("/all", getAllMovies);
 MoviesRouter.get("/yearFilter", getYearFilter);
 MoviesRouter.get("/orderMovies", getOrderMovies);
 
-export default MoviesRouter;
+module.exports =  MoviesRouter;
 
 
 

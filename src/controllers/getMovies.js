@@ -1,8 +1,8 @@
-// const { Movie } = require('../database.mjs')
-// const axios = require('axios');
+const { Movie } = require('../db.js')
+const axios = require('axios');
 
-import { Movie } from "../database.mjs"
-import axios from "axios"
+// import { Movie } from "../database.mjs"
+// import axios from "axios"
 
 let dataDownloaded = false;
 
@@ -66,7 +66,7 @@ const getApi = async (req, res) => {
     }
 }
 
-export const getAllMovies = async (req, res) => {
+const getAllMovies = async (req, res) => {
 
     try {
         const name = req.query.name;
@@ -88,7 +88,7 @@ export const getAllMovies = async (req, res) => {
 
 
 
-export default getAllMovies;
-// module.exports = {
-//     getAllMovies
-// }
+// export default getAllMovies;
+module.exports = {
+    getAllMovies
+}

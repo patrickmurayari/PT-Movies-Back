@@ -12,6 +12,7 @@ const sequelize = new Sequelize(`postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOS
     logging: false, // set to console.log to see the raw SQL queries
 });
 
+postgresql://postgres:IYZBWZFQWbNAdvnvjKqj@containers-us-west-206.railway.app:7276/railway
 
 MoviesModels(sequelize)
 

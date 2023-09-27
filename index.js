@@ -1,6 +1,6 @@
-import { conn } from './src/database.mjs';
-import cors from 'cors';
-import server from './src/ap.mjs'; // Asegúrate de que la ruta sea correcta.
+const { conn } = require('./src/db');
+const  cors = require('cors');
+const  server = require('./src/app.js'); // Asegúrate de que la ruta sea correcta.
 
 
 const corsOptions = {

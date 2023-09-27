@@ -1,7 +1,7 @@
-// const { Movie } = require('../database.mjs')
-import { Movie } from "../database.mjs"
+const { Movie } = require('../db.js')
+// import { Movie } from "../database.mjs"
 
-export const getOrderMovies = async (req, res) => {
+const getOrderMovies = async (req, res) => {
     try {
         let { OrderMovie } = req.body
 
@@ -22,4 +22,6 @@ export const getOrderMovies = async (req, res) => {
     }
 }
 
-// export default getOrderMovies;
+module.exports = {
+    getOrderMovies
+ } 
