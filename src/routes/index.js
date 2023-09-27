@@ -10,5 +10,4 @@ const router = Router();
 router.use("/movie", Movies);
 
 
-
 module.exports = router;
