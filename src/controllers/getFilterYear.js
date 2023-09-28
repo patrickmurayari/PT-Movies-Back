@@ -2,23 +2,23 @@ const { Sequelize } = require('sequelize')
 const { Movie } = require('../db.js')
 const { Op } = Sequelize
 
-// import { Sequelize } from "sequelize"
-// import  { Movie } from "../database.mjs"
-
-
 
 const getYearFilter = async (req, res) => {
     try {
-        let { rango1, rango2 } = req.body
+        let { rango1, rango2 } = req.query
 
-        if (!Number.isInteger(rango1) || !Number.isInteger(rango2) || rango1 < 0 || rango2 < 0 || rango1 > rango2) {
+        let valor1 = Number(rango1)
+        let valor2 = Number(rango2)
+        // console.log('::rango1::', typeof(valor1));
+        // console.log('::rango2::', rango2);
+        if (!Number.isInteger(valor1) || !Number.isInteger(valor2) || valor1 < 0 || valor2 < 0 || valor1 > valor2) {
             return res.status(400).json({ error: 'Valores de rango incorrectos' });
         }
 
         const moviesRange = await Movie.findAll({
             where: {
                 release_year: {
-                    [Op.between]: [rango1, rango2]
+                    [Op.between]: [valor1, valor2]
                 }
             }
         })

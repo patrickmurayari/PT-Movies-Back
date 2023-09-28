@@ -3,13 +3,14 @@ const { Movie } = require('../db.js')
 
 const getOrderMovies = async (req, res) => {
     try {
-        let { OrderMovie } = req.body
+        let { order } = req.query
+        console.log(':::OrderMovie:::', order);
 
-        if (OrderMovie !== 'ASC' && OrderMovie !== 'DESC') {
+        if (order !== 'ASC' && order !== 'DESC') {
             return res.status(400).json({ error: 'Valor de OrderMovie no válido' });
         }
 
-        const orderDirection = OrderMovie === 'ASC' ? 'DESC' : 'ASC';
+        const orderDirection = order === 'ASC' ? 'DESC' : 'ASC';
         const orderedMovies = await Movie.findAll({
             order: [['release_year', orderDirection]],
         });

@@ -3,10 +3,11 @@ const cors = require('cors');
 const server = require('./src/app.js'); // Asegúrate de que la ruta sea correcta.
 
 
-server.use(cors({
-    origin: 'http://127.0.0.1:5173'
-}));
+const corsOptions = {
+    origin: 'http://127.0.0.1:5174',
+};
 
+server.use(cors(corsOptions));
 
 const PORT = 3001;
 
