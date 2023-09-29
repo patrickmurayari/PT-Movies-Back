@@ -1,5 +1,10 @@
 const { Movie } = require('../db.js')
 const axios = require('axios');
+require('dotenv').config();
+const {
+    API_KEY_OP1 , API_KEY_OP2
+} = process.env;
+
 
 // import { Movie } from "../database.mjs"
 // import axios from "axios"
@@ -10,7 +15,7 @@ const options = {
     method: 'GET',
     url: 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
     headers: {
-        'X-RapidAPI-Key': '87a6ad1794msh2c041b5af7cbf5ap1e57b2jsnbf637121ddf2',
+        'X-RapidAPI-Key': `${API_KEY_OP1}`,
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
     }
 };
@@ -20,7 +25,7 @@ const options2 = {
     method: 'GET',
     url: 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming?page=2',
     headers: {
-        'X-RapidAPI-Key': '5c9b5eb2a1msh0f5f4b68f3b31e1p179775jsnd4def2108063',
+        'X-RapidAPI-Key': `${API_KEY_OP2}`,
         'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
     }
 };
